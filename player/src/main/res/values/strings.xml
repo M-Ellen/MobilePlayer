@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">手机影音</string>
+
+    <!--主页的分类标签-->
+    <string name="tab_video">本地视频</string>
+    <string name="tab_audio">本地音频</string>
+    <string name="tab_netvideo">网络视频</string>
+    <string name="tab_netaudio">网络音频</string>
+
+    <string name="search_hint">"全网搜索"</string>
+</resources>

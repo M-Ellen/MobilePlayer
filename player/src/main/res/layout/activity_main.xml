@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mobileplayer.view.Activity.MainActivity">
+
+    <include layout="@layout/titlebar"/>
+
+    <!--页面显示布局-->
+    <FrameLayout
+        android:id="@+id/frame_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/radiogroup_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22000000"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <RadioButton
+            android:id="@+id/radiobutton_main_video"
+            style="@style/RadioButton_main_style"
+            android:drawableTop="@drawable/radiobutton_video_drawable_selector"
+            android:text="@string/tab_video" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_main_audio"
+            style="@style/RadioButton_main_style"
+            android:drawableTop="@drawable/radiobutton_audio_drawable_selector"
+            android:text="@string/tab_audio" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_main_netvideo"
+            style="@style/RadioButton_main_style"
+            android:drawableTop="@drawable/radiobutton_netvideo_drawable_selector"
+            android:text="@string/tab_netvideo" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_main_netaudio"
+            style="@style/RadioButton_main_style"
+            android:drawableTop="@drawable/radiobutton_netaudio_drawable_selector"
+            android:text="@string/tab_netaudio" />
+
+    </RadioGroup>
+
+</LinearLayout>
