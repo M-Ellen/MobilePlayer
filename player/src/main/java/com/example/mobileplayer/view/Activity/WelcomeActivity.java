@@ -2,17 +2,19 @@ package com.example.mobileplayer.view.Activity;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import com.example.mobileplayer.R;
 import com.example.mobileplayer.presenter.activity.BaseActivityPresenter;
+import com.example.mobileplayer.presenter.activity.WelcomeActivityPresenter;
 import com.example.mobileplayer.view.callback.WelcomeActivityVeiw;
 
 public class WelcomeActivity extends BaseActivity implements WelcomeActivityVeiw {
 
     private static final String TAG = WelcomeActivity.class.getSimpleName();
 
-//    private WelcomeActivityPresenter mPresenter;
+    private WelcomeActivityPresenter mPresenter = null;
 
     private Handler mHandler = new Handler();
 
@@ -22,14 +24,14 @@ public class WelcomeActivity extends BaseActivity implements WelcomeActivityVeiw
             @Override
             public void run() {
                 starMainActivity();
-//                Log.e(TAG, "当前线程名称==" + Thread.currentThread().getName());
+                Log.e(TAG, "当前线程名称==" + Thread.currentThread().getName());
             }
         },2000);
     }
 
     @Override
     public void initData() {
-//        mPresenter = new WelcomeActivityPresenter(this);
+        mPresenter = new WelcomeActivityPresenter(this, this);
     }
 
     @Override
@@ -58,7 +60,7 @@ public class WelcomeActivity extends BaseActivity implements WelcomeActivityVeiw
 
     @Override
     protected BaseActivityPresenter getPresenter() {
-        return null;
+        return mPresenter;
     }
 
     @Override

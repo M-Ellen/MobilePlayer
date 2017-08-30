@@ -47,7 +47,7 @@ public class NativeVideoFragment extends BaseFragment implements NativeVedioFrag
 
     @Override
     protected BaseFragmentPresenter getPresenter() {
-        return null;
+        return mPresenter;
     }
 
     @Override

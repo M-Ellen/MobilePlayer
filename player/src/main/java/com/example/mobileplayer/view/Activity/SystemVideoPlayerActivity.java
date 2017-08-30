@@ -8,17 +8,18 @@ import android.widget.VideoView;
 
 import com.example.mobileplayer.R;
 import com.example.mobileplayer.presenter.activity.BaseActivityPresenter;
+import com.example.mobileplayer.presenter.activity.SystemVideoPlayerActivityPresenter;
 import com.example.mobileplayer.view.callback.SystemVideoPlayerActivityView;
 
 public class SystemVideoPlayerActivity extends BaseActivity implements SystemVideoPlayerActivityView {
 
     private VideoView mVideoView;
     private Uri mUri;
-
+    private SystemVideoPlayerActivityPresenter mPresenter = null;
 
     @Override
     protected BaseActivityPresenter getPresenter() {
-        return null;
+        return mPresenter;
     }
 
     @Override
@@ -28,6 +29,8 @@ public class SystemVideoPlayerActivity extends BaseActivity implements SystemVid
 
     @Override
     public void initData() {
+        mPresenter = new SystemVideoPlayerActivityPresenter(this, this);
+
         mUri = getIntent().getData();
         if(mUri != null) {
             mVideoView.setVideoURI(mUri);

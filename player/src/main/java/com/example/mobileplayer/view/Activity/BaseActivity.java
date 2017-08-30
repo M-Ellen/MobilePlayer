@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.example.mobileplayer.presenter.activity.BaseActivityPresenter;
 
 /**
- * Created by pengzhimao on 2017/3/23.
+ * Created by pengzhimao on 2017/3/23
  */
 public abstract class BaseActivity extends Activity{
 

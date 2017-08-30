@@ -15,7 +15,7 @@ import com.example.mobileplayer.utils.Utils;
 import java.util.List;
 
 /**
- * Created by pengzhimao on 2017/3/27.
+ * Created by pzm on 2017/3/27
  */
 public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdapter.MyViewHolder> {
 

@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 
 import com.example.mobileplayer.R;
 import com.example.mobileplayer.presenter.activity.BaseActivityPresenter;
+import com.example.mobileplayer.presenter.activity.MainActivityPresenter;
 import com.example.mobileplayer.view.adapter.MainContentAdapter;
 import com.example.mobileplayer.view.callback.MainActivityView;
 import com.example.mobileplayer.view.fragment.BaseFragment;
@@ -40,10 +41,11 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     private BaseFragment mCurrent;
     private int mPositon;
 
+    private MainActivityPresenter mPresenter = null;
 
     @Override
     protected BaseActivityPresenter getPresenter() {
-        return null;
+        return mPresenter;
     }
 
     @Override
@@ -60,6 +62,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
 
     @Override
     protected void initData() {
+        mPresenter = new MainActivityPresenter(this, this);
         initFragment();
     }
 

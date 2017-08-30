@@ -37,7 +37,6 @@ public abstract class BaseFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         intiData();
-        setLisenter();
     }
 
     @Override
