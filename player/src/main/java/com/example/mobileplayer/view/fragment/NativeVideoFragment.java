@@ -2,7 +2,6 @@ package com.example.mobileplayer.view.fragment;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,10 +13,10 @@ import com.example.mobileplayer.presenter.fragment.BaseFragmentPresenter;
 import com.example.mobileplayer.presenter.fragment.NativeVideoFragmentPresenter;
 import com.example.mobileplayer.view.Activity.SystemVideoPlayerActivity;
 import com.example.mobileplayer.view.adapter.MyRecycleViewAdapter;
-import com.example.mobileplayer.view.callback.NativeVedioFragmentView;
+import com.example.mobileplayer.view.callback.NativeVideoFragmentView;
 
 
-public class NativeVideoFragment extends BaseFragment implements NativeVedioFragmentView {
+public class NativeVideoFragment extends BaseFragment implements NativeVideoFragmentView {
 
     private RecyclerView mRecyclerView;
     private MyRecycleViewAdapter mRecycleViewAdapter;
@@ -61,20 +60,17 @@ public class NativeVideoFragment extends BaseFragment implements NativeVedioFrag
 
             @Override
             public void onItemClick(View v, int position) {
+                mPresenter.onItemClick(position);
                 Toast.makeText(mContext,mPresenter.getMediaData().get(position).toString(),Toast.LENGTH_SHORT);
 
-//                //1.调起系统所有的播放-隐式意图
-//                Intent intent = new Intent();
-//                intent.setDataAndType(Uri.parse(mPresenter.getMediaData().get(position).getData()),"video/*");
-//                startActivity(intent);
-
-//                2.调用自己写的播放器-显示意图--一个播放地址
-            Intent intent = new Intent(getActivity(),SystemVideoPlayerActivity.class);
-            intent.setDataAndType(Uri.parse(mPresenter.getMediaData().get(position).getData()),"video/*");
-            startActivity(intent);
             }
         });
 
     }
 
+    @Override
+    public void enterToPlay(Intent intent) {
+        intent.setClass(getActivity(), SystemVideoPlayerActivity.class);
+        startActivity(intent);
+    }
 }

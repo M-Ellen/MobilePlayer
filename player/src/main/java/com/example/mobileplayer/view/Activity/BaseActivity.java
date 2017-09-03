@@ -53,4 +53,8 @@ public abstract class BaseActivity extends Activity{
     protected abstract void initData();
     protected abstract void setLisenter();
     protected abstract int getLayoutViewId();
+
+    protected void setAnimation(){
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
 }

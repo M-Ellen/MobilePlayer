@@ -8,4 +8,7 @@ package com.example.mobileplayer.utils;
  * 用于定义常量
  */
 public class Constants {
+
+    public static final String MEDIAINFOS = "media_info";
+    public static final String POSITION = "media_position";
 }

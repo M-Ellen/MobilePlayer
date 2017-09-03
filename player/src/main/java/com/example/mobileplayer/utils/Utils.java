@@ -3,16 +3,17 @@ package com.example.mobileplayer.utils;
 import android.content.Context;
 import android.net.TrafficStats;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
 
 public class Utils {
 
-    private StringBuilder mFormatBuilder;
-    private Formatter mFormatter;
+    private static StringBuilder mFormatBuilder;
+    private static Formatter mFormatter;
 
-    private long lastTotalRxBytes = 0;
-    private long lastTimeStamp = 0;
+
 
     public Utils() {
         // 转换成字符串的时间
@@ -27,7 +28,7 @@ public class Utils {
      * @param timeMs
      * @return
      */
-    public String stringForTime(int timeMs) {
+    public static String stringForTime(int timeMs) {
         int totalSeconds = timeMs / 1000;
         int seconds = totalSeconds % 60;
 
@@ -50,7 +51,7 @@ public class Utils {
      * @param uri
      * @return
      */
-    public boolean isNetUri(String uri) {
+    public static boolean isNetUri(String uri) {
         boolean reault = false;
         if (uri != null) {
             if (uri.toLowerCase().startsWith("http") || uri.toLowerCase().startsWith("rtsp") || uri.toLowerCase().startsWith("mms")) {
@@ -67,7 +68,11 @@ public class Utils {
      * @param context
      * @return
      */
-    public String getNetSpeed(Context context) {
+    public static String getNetSpeed(Context context) {
+
+        long lastTotalRxBytes = 0;
+        long lastTimeStamp = 0;
+
         String netSpeed = "0 kb/s";
         long nowTotalRxBytes = TrafficStats.getUidRxBytes(context.getApplicationInfo().uid)==TrafficStats.UNSUPPORTED ? 0 :(TrafficStats.getTotalRxBytes()/1024);//转为KB;
         long nowTimeStamp = System.currentTimeMillis();
@@ -80,4 +85,8 @@ public class Utils {
     }
 
 
+    public static String getSystemTime() {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        return format.format(new Date());
+    }
 }

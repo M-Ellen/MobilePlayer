@@ -49,6 +49,11 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     }
 
     @Override
+    protected int getLayoutViewId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
     protected void initView() {
         mTitle =  (LinearLayout) findViewById(R.id.linearlayout_main_title);
         mContent = (FrameLayout) findViewById(R.id.frame_main_content);
@@ -96,10 +101,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         mRadioGroup.check(R.id.radiobutton_main_video);
     }
 
-    @Override
-    protected int getLayoutViewId() {
-        return R.layout.activity_main;
-    }
+
 
     @Override
     public void initFragment() {

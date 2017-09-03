@@ -8,4 +8,8 @@
     <string name="tab_netaudio">网络音频</string>
 
     <string name="search_hint">"全网搜索"</string>
+
+
+    <string name="invalid_uri">"无效的地址"</string>
+    <string name="unknown">"未知"</string>
 </resources>

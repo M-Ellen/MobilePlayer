@@ -1,10 +1,12 @@
 package com.example.mobileplayer.model;
 
+import java.io.Serializable;
+
 /**
  * Created by pengzhimao on 2017/3/24.
  */
 
-public class MediaInfo {
+public class MediaInfo implements Serializable{
 
     private String name;
 

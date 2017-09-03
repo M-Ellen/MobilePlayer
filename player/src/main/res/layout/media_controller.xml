@@ -16,13 +16,17 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.mobileplayer.view.customview.MarqueeTextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
-                android:text="视频名称"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:layout_marginRight="5dp"
+
+                 android:text="视频名称"
                 android:textColor="#ffffff"/>
 
             <ImageView
@@ -52,7 +56,6 @@
 
             <Button
                 android:id="@+id/btn_voice"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_voice_selector"/>
@@ -135,14 +138,14 @@
 
             <Button
                 android:id="@+id/btn_exit"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_exit_selector"/>
 
             <Button
                 android:id="@+id/btn_video_pre"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_video_pre_selector"/>
@@ -150,22 +153,23 @@
 
             <Button
                 android:id="@+id/btn_video_start_pause"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_video_pause_selector"/>
 
             <Button
                 android:id="@+id/btn_video_next"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_video_next_selector"/>
 
             <Button
                 android:id="@+id/btn_video_siwch_screen"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_video_siwch_screen_default_selector"
                 android:layout_weight="1"/>
 
         </LinearLayout>
